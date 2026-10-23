@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>نهوده 💖</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#ffe3ee;--bg2:#fff1c9;--card:#ffffffcc;--ink:#4a1f35;--accent:#ff4f8b;--soft:#ff9cc0;--paper:#fffaf0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg1:#2b1020;--bg2:#3a1a2c;--card:#4a2238cc;--ink:#ffe3ee;--accent:#ff6fa3;--soft:#c0577f;--paper:#5a2a42}}
+:root[data-theme="dark"]{--bg1:#2b1020;--bg2:#3a1a2c;--card:#4a2238cc;--ink:#ffe3ee;--accent:#ff6fa3;--soft:#c0577f;--paper:#5a2a42}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:'Cairo',Tahoma,Arial,sans-serif;color:var(--ink);background:linear-gradient(160deg,var(--bg1),var(--bg2));text-align:center;overflow-x:hidden;transition:background .6s}
+main{max-width:520px;margin:0 auto;padding:20px 16px 60px;position:relative;z-index:2}
+h1{font-size:2.2rem;margin:.2em 0;font-weight:900}
+h2{margin:0;font-size:1.25rem}
+p{line-height:1.9;margin:.4em 0}
+
+/* ===== الرقاصة ===== */
+.dancer{--t:1.2s;width:220px;max-width:62vw;margin:0 auto;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;filter:drop-shadow(0 10px 14px #ff4f8b44)}
+.dancer svg{width:100%;height:auto;display:block;overflow:visible}
+.dancer .all{transform-origin:100px 250px;animation:sway var(--t) ease-in-out infinite}
+.dancer .head{transform-origin:100px 108px;animation:tilt var(--t) ease-in-out infinite}
+.dancer .skirt{transform-origin:100px 148px;animation:swish var(--t) ease-in-out infinite}
+.dancer .armL{transform-origin:82px 118px;animation:armL var(--t) ease-in-out infinite}
+.dancer .armR{transform-origin:118px 118px;animation:armR var(--t) ease-in-out infinite}
+.dancer .legL{transform-origin:92px 205px;animation:legL var(--t) ease-in-out infinite}
+.dancer .legR{transform-origin:108px 205px;animation:legR var(--t) ease-in-out infinite}
+.dancer .bunL,.dancer .bunR{transform-origin:100px 60px;animation:tilt var(--t) ease-in-out infinite reverse}
+.dancer .lockL{transform-origin:66px 72px;animation:lockL var(--t) ease-in-out infinite}
+.dancer .lockR{transform-origin:134px 72px;animation:lockR var(--t) ease-in-out infinite}
+.dancer .note{animation:floaty calc(var(--t)*2.2) ease-in-out infinite;opacity:0}
+.dancer .note.n2{animation-delay:calc(var(--t)*.7)}
+.dancer .note.n3{animation-delay:calc(var(--t)*1.4)}
+.dancer .spark{animation:twinkle calc(var(--t)*1.2) ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.dancer .spark.s2{animation-delay:.4s}.dancer .spark.s3{animation-delay:.8s}
+.dancer .m-laugh,.dancer .tears,.dancer .haha{display:none}
+.dancer.laugh .m-normal{display:none}
+.dancer.laugh .m-laugh,.dancer.laugh .tears{display:block}
+.dancer.laugh .haha{display:block;opacity:0;animation:floaty calc(var(--t)*1.4) ease-out infinite}
+.dancer.laugh .haha.h2{animation-delay:calc(var(--t)*.5)}
+.dancer.laugh .haha.h3{animation-delay:calc(var(--t)*.9)}
+.dancer.laugh .head{animation:shake calc(var(--t)/2) ease-in-out infinite}
+.dancer.laugh .m-laugh{transform-origin:100px 96px;animation:chomp calc(var(--t)/2) ease-in-out infinite}
+@keyframes sway{0%{transform:rotate(-4deg) translateY(0)}25%{transform:rotate(0) translateY(-10px)}50%{transform:rotate(4deg) translateY(0)}75%{transform:rotate(0) translateY(-10px)}100%{transform:rotate(-4deg) translateY(0)}}
+@keyframes tilt{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
+@keyframes shake{0%,100%{transform:rotate(-8deg) translateY(0)}50%{transform:rotate(8deg) translateY(-3px)}}
+@keyframes chomp{0%,100%{transform:scaleY(.85)}50%{transform:scaleY(1.12)}}
+@keyframes swish{0%,100%{transform:rotate(-4deg) scaleX(.96)}50%{transform:rotate(4deg) scaleX(1.08)}}
+@keyframes armL{0%,100%{transform:rotate(8deg)}50%{transform:rotate(115deg)}}
+@keyframes armR{0%,100%{transform:rotate(-115deg)}50%{transform:rotate(-8deg)}}
+@keyframes legL{0%,100%{transform:rotate(-12deg)}50%{transform:rotate(10deg)}}
+@keyframes legR{0%,100%{transform:rotate(10deg)}50%{transform:rotate(-12deg)}}
+@keyframes lockL{0%,100%{transform:rotate(10deg)}50%{transform:rotate(-14deg)}}
+@keyframes lockR{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-10deg)}}
+@keyframes floaty{0%{transform:translateY(10px) scale(.7);opacity:0}25%{opacity:1}100%{transform:translateY(-34px) scale(1.1);opacity:0}}
+@keyframes twinkle{0%,100%{transform:scale(.3);opacity:.2}50%{transform:scale(1.2);opacity:1}}
+/* ===================== */
+
+@keyframes dance{0%{transform:rotate(-14deg) translateY(0) scaleX(1)}25%{transform:rotate(0) translateY(-22px) scaleX(-1)}50%{transform:rotate(14deg) translateY(0) scaleX(-1)}75%{transform:rotate(0) translateY(-22px) scaleX(1)}100%{transform:rotate(-14deg) translateY(0) scaleX(1)}}
+.row{display:flex;justify-content:center;gap:10px;font-size:2.2rem}
+.row span{animation:dance 1.2s ease-in-out infinite}
+.row span:nth-child(2){animation-delay:.2s}.row span:nth-child(3){animation-delay:.4s}
+.card{background:var(--card);backdrop-filter:blur(8px);border-radius:24px;padding:18px;margin:18px 0;box-shadow:0 10px 30px #ff4f8b22}
+.moods{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+button{font-family:inherit;font-size:1rem;font-weight:700;border:0;border-radius:16px;padding:12px 8px;background:var(--accent);color:#fff;cursor:pointer;transition:transform .15s}
+button:active{transform:scale(.94)}
+button.ghost{background:transparent;color:var(--accent);border:2px solid var(--accent)}
+a.btn{display:block;text-decoration:none;font-family:inherit;font-size:1.05rem;font-weight:700;border-radius:16px;padding:12px 8px;background:var(--accent);color:#fff;margin-top:10px}
+a.btn.alt{background:var(--soft)}
+#msg{min-height:3.8em;font-size:1.15rem;font-weight:700;margin-top:14px}
+.count{display:flex;justify-content:center;gap:10px;margin-top:10px}
+.count div{background:var(--accent);color:#fff;border-radius:16px;padding:10px 12px;min-width:64px}
+.count b{display:block;font-size:1.6rem}
+.count small{font-size:.8rem}
+.heart{position:fixed;bottom:-40px;font-size:1.6rem;animation:rise linear forwards;z-index:1;pointer-events:none}
+@keyframes rise{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+.big{width:100%;font-size:1.2rem;padding:16px 8px}
+.bar{height:12px;border-radius:99px;background:#ff4f8b33;margin-top:14px;overflow:hidden;display:none}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--soft),var(--accent));border-radius:99px}
+.bar.on{display:block}
+.bar.on i{width:100%;transition:width 30s linear}
+.hide{display:none}
+.letter{background:var(--paper);border-radius:18px;padding:20px 18px;margin-top:14px;text-align:right;line-height:2.1;box-shadow:inset 0 0 0 2px #ff9cc055;font-weight:600;animation:pop .6s ease}
+@keyframes pop{from{transform:scale(.85) translateY(12px);opacity:0}to{transform:none;opacity:1}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:12px}
+.chips button{background:var(--card);color:var(--ink);box-shadow:0 0 0 2px #ff9cc066 inset;padding:10px 12px}
+.chips button.done{background:var(--accent);color:#fff}
+.reason{min-height:3.5em;font-size:1.1rem;font-weight:700;margin-top:12px}
+.bread{width:170px;max-width:55vw;display:block;margin:10px auto 0;animation:wob 2.2s ease-in-out infinite;filter:drop-shadow(0 6px 8px #c98a4b55)}
+@keyframes wob{0%,100%{transform:rotate(-5deg) translateY(0)}50%{transform:rotate(5deg) translateY(-6px)}}
+</style>
+</head>
+<body>
+<main>
+  <div class="dancer" id="dancer" title="دوسي عليا">
+    <svg viewBox="0 0 200 270" xmlns="http://www.w3.org/2000/svg" aria-label="بنوتة بترقص">
+      <!-- ضل -->
+      <ellipse cx="100" cy="258" rx="52" ry="8" fill="#000" opacity=".12"/>
+
+      <!-- نغمات وبريق -->
+      <g fill="#ff4f8b" font-family="Arial,sans-serif" font-weight="700">
+        <text class="note" x="22" y="90" font-size="26">♪</text>
+        <text class="note n2" x="166" y="70" font-size="30">♫</text>
+        <text class="note n3" x="150" y="140" font-size="22">♪</text>
+      </g>
+      <g fill="#ffd34f">
+        <path class="spark" d="M30 40 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z"/>
+        <path class="spark s2" d="M170 30 l2.5 6 6 2.5 -6 2.5 -2.5 6 -2.5 -6 -6 -2.5 6 -2.5z"/>
+        <path class="spark s3" d="M178 150 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2z"/>
+      </g>
+      <!-- ضحك -->
+      <g fill="#ff4f8b" font-family="Cairo,Tahoma,sans-serif" font-weight="900">
+        <text class="haha" x="150" y="40" font-size="20">هههه</text>
+        <text class="haha h2" x="4" y="55" font-size="18">هاهاها</text>
+        <text class="haha h3" x="156" y="100" font-size="16">😂</text>
+      </g>
+
+      <g class="all">
+        <!-- رجلين -->
+        <g class="legL">
+          <rect x="87" y="200" width="10" height="44" rx="5" fill="#ffd9c4"/>
+          <rect x="85" y="232" width="14" height="5" rx="2.5" fill="#fff" opacity=".85"/>
+          <ellipse cx="90" cy="247" rx="12" ry="7" fill="#ff4f8b"/>
+          <circle cx="86" cy="245" r="2.2" fill="#fff" opacity=".8"/>
+        </g>
+        <g class="legR">
+          <rect x="103" y="200" width="10" height="44" rx="5" fill="#ffd9c4"/>
+          <rect x="101" y="232" width="14" height="5" rx="2.5" fill="#fff" opacity=".85"/>
+          <ellipse cx="110" cy="247" rx="12" ry="7" fill="#ff4f8b"/>
+          <circle cx="114" cy="245" r="2.2" fill="#fff" opacity=".8"/>
+        </g>
+
+        <!-- دراعات -->
+        <g class="armL">
+          <line x1="82" y1="118" x2="52" y2="142" stroke="#ffd9c4" stroke-width="9" stroke-linecap="round"/>
+          <circle cx="62" cy="134" r="5.5" fill="none" stroke="#ffd34f" stroke-width="2.5"/>
+          <circle cx="50" cy="144" r="7" fill="#ffd9c4"/>
+          <circle cx="82" cy="118" r="9" fill="#ff4f8b"/>
+        </g>
+        <g class="armR">
+          <line x1="118" y1="118" x2="148" y2="142" stroke="#ffd9c4" stroke-width="9" stroke-linecap="round"/>
+          <circle cx="138" cy="134" r="5.5" fill="none" stroke="#ffd34f" stroke-width="2.5"/>
+          <circle cx="150" cy="144" r="7" fill="#ffd9c4"/>
+          <circle cx="118" cy="118" r="9" fill="#ff4f8b"/>
+        </g>
+
+        <!-- الفستان -->
+        <g class="skirt">
+          <path d="M80 146 Q100 138 120 146 L156 212 Q100 234 44 212 Z" fill="#ff7fae"/>
+          <path d="M60 190 Q100 208 140 190 L156 212 Q100 234 44 212 Z" fill="#ff5c97"/>
+          <path d="M46 214 Q56 226 66 216 Q78 230 90 220 Q100 232 110 221 Q122 230 134 216 Q144 226 154 214" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" opacity=".85"/>
+          <circle cx="72" cy="196" r="3" fill="#fff" opacity=".7"/>
+          <circle cx="100" cy="208" r="3" fill="#fff" opacity=".7"/>
+          <circle cx="128" cy="196" r="3" fill="#fff" opacity=".7"/>
+          <path d="M86 168 l2 5 5 .5 -4 3.5 1.2 5 -4.2 -2.8 -4.2 2.8 1.2 -5 -4 -3.5 5 -.5z" fill="#fff" opacity=".6"/>
+          <path d="M118 172 l2 5 5 .5 -4 3.5 1.2 5 -4.2 -2.8 -4.2 2.8 1.2 -5 -4 -3.5 5 -.5z" fill="#fff" opacity=".6"/>
+        </g>
+
+        <!-- الجزء العلوي -->
+        <path d="M82 112 h36 l5 38 q-23 8 -46 0 z" fill="#ff4f8b"/>
+        <rect x="94" y="100" width="12" height="16" rx="6" fill="#ffd9c4"/>
+        <path d="M88 114 Q100 128 112 114" fill="none" stroke="#ffd34f" stroke-width="2" stroke-linecap="round"/>
+        <path d="M100 129 c-6 -5 -9 -8 -9 -11.5 a4.5 4.5 0 0 1 9 -1 a4.5 4.5 0 0 1 9 1 c0 3.5 -3 6.5 -9 11.5z" fill="#fff"/>
+        <rect x="80" y="144" width="40" height="7" rx="3.5" fill="#ffd34f"/>
+        <path d="M100 147 l-9 -6 v12 z M100 147 l9 -6 v12 z" fill="#fff"/>
+        <circle cx="100" cy="147.5" r="3.5" fill="#ffd34f"/>
+
+        <!-- الراس -->
+        <g class="head">
+          <g class="bunL"><circle cx="62" cy="38" r="15" fill="#5a2a3c"/><circle cx="62" cy="38" r="5" fill="#7a3a52"/><path d="M52 34 q10 -8 20 0" stroke="#7a3a52" stroke-width="2" fill="none" stroke-linecap="round"/></g>
+          <g class="bunR"><circle cx="138" cy="38" r="15" fill="#5a2a3c"/><circle cx="138" cy="38" r="5" fill="#7a3a52"/><path d="M128 34 q10 -8 20 0" stroke="#7a3a52" stroke-width="2" fill="none" stroke-linecap="round"/></g>
+          <circle cx="100" cy="68" r="43" fill="#5a2a3c"/>
+          <!-- خصلات شعر بتتحرك -->
+          <path class="lockL" d="M66 72 Q52 96 60 124" stroke="#5a2a3c" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <path class="lockR" d="M134 72 Q148 96 140 124" stroke="#5a2a3c" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <!-- الوش -->
+          <circle cx="100" cy="76" r="37" fill="#ffd9c4"/>
+          <!-- حلقان -->
+          <circle cx="63" cy="90" r="3.2" fill="#ffd34f"/>
+          <circle cx="137" cy="90" r="3.2" fill="#ffd34f"/>
+          <!-- الغُرّة -->
+          <path d="M63 66 Q70 32 100 32 Q130 32 137 66 Q122 48 100 52 Q78 48 63 66 Z" fill="#5a2a3c"/>
+          <path d="M80 44 Q92 40 98 46" stroke="#7a3a52" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <!-- ربطة شعر + وردة -->
+          <path d="M126 40 l-12 -8 v16 z M126 40 l12 -8 v16 z" fill="#ff4f8b"/>
+          <circle cx="126" cy="40" r="4.5" fill="#ff9cc0"/>
+          <g transform="translate(72 42)">
+            <circle cx="0" cy="-5" r="4" fill="#fff"/><circle cx="5" cy="-1.5" r="4" fill="#fff"/><circle cx="3" cy="4" r="4" fill="#fff"/><circle cx="-3" cy="4" r="4" fill="#fff"/><circle cx="-5" cy="-1.5" r="4" fill="#fff"/>
+            <circle cx="0" cy="0" r="3.2" fill="#ffd34f"/>
+          </g>
+          <!-- عيون سعيدة + رموش -->
+          <path d="M80 78 q7 -10 14 0" stroke="#4a1f35" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          <path d="M106 78 q7 -10 14 0" stroke="#4a1f35" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          <path d="M79 76 l-4 -3 M121 76 l4 -3 M80 72 l-3 -4 M120 72 l3 -4" stroke="#4a1f35" stroke-width="2" stroke-linecap="round"/>
+          <!-- دموع ضحك -->
+          <g class="tears" fill="#7fd0ff">
+            <path d="M78 84 q-3 6 0 9 q3 -3 0 -9z"/><path d="M122 84 q3 6 0 9 q-3 -3 0 -9z"/>
+          </g>
+          <!-- خدود -->
+          <ellipse cx="76" cy="92" rx="8" ry="5.5" fill="#ff8fb5" opacity=".75"/>
+          <ellipse cx="124" cy="92" rx="8" ry="5.5" fill="#ff8fb5" opacity=".75"/>
+          <circle cx="72" cy="91" r="1.2" fill="#fff" opacity=".8"/><circle cx="76" cy="94" r="1.2" fill="#fff" opacity=".8"/><circle cx="124" cy="94" r="1.2" fill="#fff" opacity=".8"/><circle cx="128" cy="91" r="1.2" fill="#fff" opacity=".8"/>
+          <!-- بقها -->
+          <g class="m-normal">
+            <path d="M90 93 Q100 108 110 93 Z" fill="#d9446b" stroke="#d9446b" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M94 98 Q100 103 106 98 Q100 100.5 94 98Z" fill="#ff9cc0"/>
+          </g>
+          <g class="m-laugh">
+            <path d="M84 90 Q100 124 116 90 Z" fill="#c2305a" stroke="#c2305a" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M86 91 h28 q-2 6 -6 6 h-16 q-4 0 -6 -6z" fill="#fff"/>
+            <ellipse cx="100" cy="109" rx="9" ry="5" fill="#ff8fb5"/>
+          </g>
+        </g>
+      </g>
+    </svg>
+  </div>
+  <h1>نهوده 💖</h1>
+  <p>أحلى حاجة حصلت في حياتي<br>— أمير</p>
+  <div class="row"><span>🌸</span><span>✨</span><span>🌸</span></div>
+
+  <!-- تحدي الرقص -->
+  <div class="card" id="danceCard">
+    <h2>أمير بيطلب منك طلب 🥹💃</h2>
+    <p>عايزك تقومي دلوقتي وترقصي <b>بجد</b>، وتضحكي من قلبك زي الأطفال.<br>حتى لو تعبانة، رقصة صغيرة وضحكة واحدة تفرّق، وأنا مش هسيبك لوحدك فيها 💕</p>
+    <button class="big" id="danceBtn">يلا نرقص بجد! 🎶💃😂</button>
+    <div class="bar" id="bar"><i></i></div>
+    <div id="danceMsg" style="font-weight:700;margin-top:10px;min-height:2em"></div>
+    <div id="danceAfter" class="hide">
+      <button class="ghost" id="stopBtn" style="width:100%;margin-top:8px">وقّفي الموسيقى 🔇</button>
+      <a class="btn" id="danceWa" target="_blank" rel="noopener" href="#">ابعتيلي إنك رقصتي 💃😂</a>
+    </div>
+    <p style="font-size:.95rem;opacity:.85;margin-top:14px">ولو عايزة تتحركي على أغنية حقيقية:</p>
+    <a class="btn alt" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=%D9%86%D8%A7%D9%86%D8%B3%D9%8A+%D8%B9%D8%AC%D8%B1%D9%85+%D9%8A%D8%A7+%D8%B3%D9%84%D8%A7%D9%85">نانسي عجرم - يا سلام 🎤</a>
+    <a class="btn alt" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=%D8%B9%D9%85%D8%B1%D9%88+%D8%AF%D9%8A%D8%A7%D8%A8+%D9%86%D9%88%D8%B1+%D8%A7%D9%84%D8%B9%D9%8A%D9%86">عمرو دياب - نور العين ✨</a>
+    <a class="btn alt" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=%D8%A3%D8%BA%D8%A7%D9%86%D9%8A+%D8%B1%D9%82%D8%B5+%D9%85%D8%B5%D8%B1%D9%8A%D8%A9+%D9%81%D8%B1%D8%AD%D8%A7%D9%86%D8%A9">أغاني رقص مصرية فرحانة 🪩</a>
+  </div>
+
+  <div class="card">
+    <h2>مزاجك إيه دلوقتي؟ 🥰</h2>
+    <p>مهما كان مزاجك، أنا هنا وبحبك</p>
+    <div class="moods">
+      <button data-m="happy">فرحانة 😄</button>
+      <button data-m="sad">زعلانة 🥺</button>
+      <button data-m="angry">مخنوقة 😤</button>
+      <button data-m="tired">تعبانة 😴</button>
+      <button data-m="hungry">جعانة 🍕</button>
+      <button data-m="random">مش عارفة 🎢</button>
+    </div>
+    <div id="msg">دوسي على مزاجك يا قمر 👆</div>
+    <div id="act" style="margin-top:8px"></div>
+  </div>
+
+  <div class="card">
+    <h2>جواب من أمير 💌</h2>
+    <p>كتبتهولك من قلبي، افتحيه لما تحبي</p>
+    <button id="letterBtn" style="width:100%">افتحي الجواب 💌</button>
+    <div id="letter" class="letter hide">
+      <p><b>يا نهوده يا قلبي،</b></p>
+      <p>عارف إن الأيام دي بتتعبك وجسمك مش مريّحك، ومهما عملت مش هقدر أشيل عنك الوجع... بس أقدر أفضل جنبك، أسمعك، أدلعك، وأضحكك لحد ما تنسي.</p>
+      <p>انتي مش بس حبيبتي، انتي أماني وبيتي وضحكتي اللي برجعلها آخر كل يوم. وكل ما بشوفك بتتعبي وبرضو بتكملي وبتبتسمي، بحبك أكتر وأكتر، وببقى فخور إنك بتاعتي.</p>
+      <p>النهاردة خدي راحتك، اتدللي، وسيبي الدنيا عليا. ولو عايزة تعيطي هسمعك، ولو عايزة تضحكي هضحك معاكي، ولو عايزة تسكتي هسكت وأمسك إيدك.</p>
+      <p>بحبك أوي يا نهوده، النهاردة وبكرة وكل يوم 💖</p>
+      <p style="text-align:left"><b>— أمير</b></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>رسالة حب من أمير 💗</h2>
+    <p>كل ضغطة = رسالة جديدة ليكي</p>
+    <button id="loveBtn" style="width:100%">رسالة حب 💕</button>
+    <div class="reason" id="love"></div>
+  </div>
+
+  <div class="card">
+    <h2>حاجات بحبها فيكي 🌷</h2>
+    <button id="reasonBtn" style="width:100%">قوليلي سبب 🥰</button>
+    <div class="reason" id="reason"></div>
+  </div>
+
+  <div class="card">
+    <h2>دلع الأيام الصعبة 🫶</h2>
+    <p>اختاري اللي نفسك فيه، وأنا أعتبره اتنفّذ</p>
+    <div class="chips" id="care"></div>
+    <div class="reason" id="careMsg"></div>
+  </div>
+
+  <div class="card">
+    <h2>الشبكة الرسمية 💍🥖</h2>
+    <p>أمير قرر ياخد القرار الحاسم في موضوع الشبكة 😂</p>
+    <svg class="bread" viewBox="0 0 160 130" xmlns="http://www.w3.org/2000/svg" aria-label="رغيف عيش">
+      <ellipse cx="80" cy="120" rx="50" ry="7" fill="#000" opacity=".12"/>
+      <ellipse cx="80" cy="66" rx="64" ry="52" fill="#c98a4b"/>
+      <ellipse cx="80" cy="62" rx="58" ry="46" fill="#e2a967"/>
+      <ellipse cx="62" cy="42" rx="26" ry="12" fill="#f3c98f" opacity=".8"/>
+      <g fill="#b9763a" opacity=".75">
+        <circle cx="46" cy="70" r="3"/><circle cx="64" cy="84" r="2.5"/><circle cx="98" cy="48" r="3"/>
+        <circle cx="112" cy="72" r="3"/><circle cx="86" cy="88" r="2.5"/><circle cx="40" cy="52" r="2"/><circle cx="120" cy="56" r="2"/>
+      </g>
+      <path d="M70 58 q10 -6 20 0" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" opacity=".6"/>
+      <circle cx="80" cy="64" r="15" fill="none" stroke="#ffd34f" stroke-width="5"/>
+      <path d="M80 44 l5 6 h-10z" fill="#9be7ff" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/>
+      <path d="M70 100 q10 8 20 0" stroke="#ff4f8b" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </svg>
+    <button id="shabkaBtn" style="width:100%;margin-top:8px">افتحي الشبكة 🎁</button>
+    <div class="reason" id="shabka"></div>
+  </div>
+
+  <div class="card">
+    <h2>باقي على عيد ميلادك 🎂</h2>
+    <div class="count" id="count"></div>
+    <p id="age"></p>
+  </div>
+
+  <div class="card">
+    <button id="surprise" style="width:100%;font-size:1.1rem">اضغطي هنا لمفاجأة 🎁</button>
+    <p id="sur" style="font-weight:700"></p>
+  </div>
+  <div class="card">
+    <h2>أغنيتنا 🎶</h2>
+    <p>إليسا بتقولك اللي أنا مش عارف أقوله 🥹</p>
+    <a class="btn" id="song" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=%D8%A5%D9%84%D9%8A%D8%B3%D8%A7+%D8%B9%D8%A7%D9%8A%D8%B4%D8%A7%D9%84%D9%83">شغلي الأغنية 🎧</a>
+  </div>
+  <div class="card">
+    <h2>ابعتيلي بوسة 😘</h2>
+    <p>دوسي والرسالة هتبقى جاهزة في الشات</p>
+    <a class="btn" id="kiss" target="_blank" rel="noopener" href="#">😘 امممواااه 💋</a>
+  </div>
+</main>
+
+<script>
+function $(i){return document.getElementById(i)}
+function pick(a){return a[Math.floor(Math.random()*a.length)]}
+var WA='https://wa.me/201552451705?text=';
+
+/* ---------- قلوب وكونفيتي ---------- */
+function hearts(n){for(var i=0;i<n;i++){var h=document.createElement('div');h.className='heart';h.textContent=['💖','💕','🌸','✨','💗'][Math.floor(Math.random()*5)];h.style.left=Math.random()*95+'vw';h.style.animationDuration=(3+Math.random()*3)+'s';document.body.appendChild(h);setTimeout(function(x){return function(){x.remove()}}(h),6500)}}
+function confetti(n,set){set=set||['🎉','🎊','✨','💃','🌟'];for(var i=0;i<n;i++){var h=document.createElement('div');h.className='heart';h.textContent=set[i%set.length];h.style.left=Math.random()*95+'vw';h.style.animationDuration=(2+Math.random()*2.5)+'s';document.body.appendChild(h);setTimeout(function(x){return function(){x.remove()}}(h),5000)}}
+function mkb(t,f){var b=document.createElement('button');b.textContent=t;b.style.margin='6px 4px';b.onclick=f;return b}
+
+/* ---------- الرقاصة ---------- */
+var dancer=$('dancer');
+function fastDance(ms){dancer.style.setProperty('--t','.5s');setTimeout(function(){if(!playing)dancer.style.removeProperty('--t')},ms||4000)}
+dancer.onclick=function(){hearts(25);fastDance(3000)};
+
+/* ---------- موسيقى مصنوعة بالكود (إيقاع شرقي مرح) ---------- */
+var AC=null,playing=false,sched=null,nextT=0,stepI=0,BPM=112,SP=60/BPM/4,master=null,noiseBuf=null;
+var HIJAZ=[293.66,311.13,369.99,392,440,466.16,523.25,587.33];
+var MEL=[0,-1,2,-1,3,-1,2,1, 0,-1,4,-1,3,2,1,-1, 5,-1,4,-1,3,-1,2,-1, 1,-1,2,3,2,1,0,-1];
+var BASS=[73.42,0,0,73.42,0,0,73.42,0,98,0,0,98,0,0,110,0];
+function ensureAudio(){
+ if(AC)return;
+ AC=new (window.AudioContext||window.webkitAudioContext)();
+ master=AC.createGain();master.gain.value=.55;master.connect(AC.destination);
+ noiseBuf=AC.createBuffer(1,AC.sampleRate*.5,AC.sampleRate);
+ var d=noiseBuf.getChannelData(0);for(var i=0;i<d.length;i++)d[i]=Math.random()*2-1;
+}
+function tone(f,t,dur,type,vol,slide){
+ var o=AC.createOscillator(),g=AC.createGain();o.type=type;o.frequency.setValueAtTime(f,t);
+ if(slide)o.frequency.exponentialRampToValueAtTime(slide,t+dur);
+ g.gain.setValueAtTime(vol,t);g.gain.exponentialRampToValueAtTime(.001,t+dur);
+ o.connect(g);g.connect(master);o.start(t);o.stop(t+dur+.02);
+}
+function noise(t,dur,vol,freq){
+ var s=AC.createBufferSource();s.buffer=noiseBuf;var f=AC.createBiquadFilter();f.type='highpass';f.frequency.value=freq;
+ var g=AC.createGain();g.gain.setValueAtTime(vol,t);g.gain.exponentialRampToValueAtTime(.001,t+dur);
+ s.connect(f);f.connect(g);g.connect(master);s.start(t);s.stop(t+dur+.02);
+}
+function playStep(i,t){
+ var s=i%16;
+ if(s%4===0)tone(150,t,.18,'sine',.9,45);               // دُم
+ if(s===6||s===10||s===14)tone(110,t,.12,'sine',.4,50);
+ if(s===4||s===12)noise(t,.12,.35,1500);                  // تَك
+ if(s%2===1)noise(t,.04,.15,7000);                        // هاي-هات
+ if(BASS[s])tone(BASS[s],t,SP*2.2,'triangle',.35);
+ var m=MEL[i%32];
+ if(m>=0)tone(HIJAZ[m],t,SP*1.8,'sine',.22);
+ if(i%32===0)tone(HIJAZ[0]/2,t,SP*8,'sine',.12);
+}
+function startMusic(){
+ ensureAudio();if(AC.state==='suspended')AC.resume();
+ if(playing)return;playing=true;stepI=0;nextT=AC.currentTime+.08;
+ dancer.style.setProperty('--t',(60/BPM*2)+'s');
+ sched=setInterval(function(){while(nextT<AC.currentTime+.25){playStep(stepI,nextT);nextT+=SP;stepI++}},40);
+}
+function stopMusic(){
+ playing=false;clearInterval(sched);sched=null;
+ dancer.style.removeProperty('--t');dancer.classList.remove('laugh');
+}
+
+/* ---------- تحدي الرقص ---------- */
+var danceTimer=null;
+var DM=['يلا يا نهوده حركي إيدك وارقصي! 💃','ضحكي بصوت عالي، أنا عايز أسمعك 😂','لفّي حوالين نفسك مرة 🌀','هزّي كتافك زي الرقاصة اللي فوق 💫','برافو عليكي، كمّلي كمّلي! 🎉','مش عايز أشوف حد مش بيضحك النهاردة 🥳'];
+$('danceBtn').onclick=function(){
+ startMusic();dancer.classList.add('laugh');
+ confetti(40);hearts(15);
+ var bar=$('bar');bar.classList.remove('on');void bar.offsetWidth;bar.classList.add('on');
+ $('danceAfter').classList.remove('hide');
+ $('danceBtn').textContent='ارقصي لحد ما الشريط يخلص! 💃😂';
+ var n=0;$('danceMsg').textContent=DM[0];
+ clearInterval(danceTimer);
+ danceTimer=setInterval(function(){n++;
+  if(n<DM.length){$('danceMsg').textContent=DM[n];confetti(12)}
+ },5000);
+ setTimeout(function(){
+  clearInterval(danceTimer);
+  $('danceMsg').textContent='برافو يا نهوده! ضحكتك دي أحلى هدية ليا النهاردة 🥹💖';
+  confetti(60,['💖','💃','🎉','✨','😂']);hearts(25);
+  $('danceBtn').textContent='مرة كمان؟ 🔁';
+ },30000);
+ $('danceWa').href=WA+encodeURIComponent('رقصت وضحكت يا أمير 💃😂💖\nخلاص بقيت أحسن بسببك 🥹');
+};
+$('stopBtn').onclick=function(){stopMusic();clearInterval(danceTimer);$('danceMsg').textContent='ارتاحي شوية يا قلبي 🌸';};
+
+/* ---------- المزاج ---------- */
+var M={
+ happy:['ضحكتك دي بتنوّر الدنيا كلها 😍','ايوااا كده! نهوده الفرحانة هي الأحلى 🎉','الفرحة دي تتحط في إطار، وأنا أول واحد هيتفرج 💃','يارب تفضلي مبسوطة كده طول عمرك 🌸','النهاردة يوم احتفال رسمي بيكي 🥳'],
+ sad:['تعالي في حضني يا نهوده 🫂 كل حاجة هتعدي','مين زعّل قلبك؟ قوليلي وأنا أظبطه 😤💗','حقك تزعلي، وحقي أفضل جنبك لحد ما تضحكي 🌷','أنا مش هسيبك لوحدك، خدي الحضن اللي تحت 👇','دموعك غالية عليا، ومتستاهلش غير الدلع 🥺💞'],
+ angry:['حقك تتخنقي وتفشّي غلك، وأنا مش هزعلك أبدًا 🍫','اتخنقي براحتك، وأنا بحبك وانتي مخنوقة برضو 💕','فرقعي الفقاقيع اللي تحت ودلعي نفسك 💥','هجيبلك شوكولاتة وأسكت خالص 🤐🍫','النهاردة انتي الملكة والكل يسمع الكلام 👑'],
+ tired:['ارتاحي يا قلبي، كوباية ينسون وبطانية 🍵','النهاردة إجازة من الدنيا كلها، أنا شايل عنك 😴💖','نامي شوية وأنا هنا لما تصحي 🌙','جسمك تعبان وانتي تستاهلي كل راحة 🫶','شغلي وضع النوم اللي تحت وغمّضي عينك 💤'],
+ hungry:['قولي عايزة إيه وأنا أجيبه فورًا 🍕🍫','الأكل أهم من أي حاجة، أوامرك يا ست الكل 👑','اختاري اللي نفسك فيه من تحت 😋','البطن الجعانة مزاجها أصعب حاجة، هنحل الموضوع 🛵'],
+ random:['مزاجك بيتغير ومحدش يقدر يقولك حاجة، وأنا بحب كل نسخة منك 🎢💗','مش لازم تعرفي، كفاية إنك نهوده بتاعتي 🥹','لفّي العجلة وهي تقرر النهاردة إيه 🎡','تعالي نرقص وخلاص 💃🕺']
+};
+var themes={happy:["#fff1c9","#ffd6e8"],sad:["#e3ecff","#ffe3ee"],angry:["#ffe0d6","#ffd0e0"],tired:["#ece4ff","#e3f1ff"],hungry:["#fff0c2","#ffe0c2"],random:["#ffe3ee","#e0fff4"]};
+var kissMood='';
+var kissText={happy:'أنا فرحانة النهاردة 😄',sad:'أنا زعلانة شوية وعايزاك جنبي 🥺',angry:'أنا مخنوقة ومحتاجة شوكولاتة 😤🍫',tired:'أنا تعبانة وعايزة حضنك 😴',hungry:'أنا جعانة 🍕',random:'مزاجي متلخبط النهاردة 🎢'};
+function setKiss(){
+ var t='امممممممممواااااااه 😘💋💋💋\n\nمن نهوده لأحلى أمير في الدنيا 💖🌸'+(kissMood?'\n'+kissText[kissMood]:'');
+ $('kiss').href=WA+encodeURIComponent(t);
+}
+function act(k){
+ var a=$('act'),m=$('msg');a.innerHTML='';document.body.style.filter='';
+ if(k==='happy'){confetti(40);
+  a.appendChild(mkb('ارقصي معايا 💃',function(){confetti(40);fastDance(4000);dancer.classList.add('laugh');setTimeout(function(){if(!playing)dancer.classList.remove('laugh')},4000);m.textContent='ايوااا كده! الرقاصة اتجننت 💃🎉'}))}
+ else if(k==='sad'){var h=0,T=['حضن رقم 1 🫂 أنا جنبك','حضن رقم 2 🤗 ماسكك ومش هسيبك','حضن رقم 3 💞 حاسة بتحسن شوية؟'];
+  a.appendChild(mkb('خدي حضن 🫂',function(){h++;m.textContent=T[Math.min(h,3)-1]+(h>3?' (حضن رقم '+h+' 💗)':'');hearts(15)}))}
+ else if(k==='angry'){var p=0,c=document.createElement('p');c.textContent='فشّي غلك: فرقعي الفقاقيع 💢';a.appendChild(c);
+  for(var i=0;i<6;i++){a.appendChild(mkb('💢',function(){this.textContent='💥';this.disabled=true;p++;if(p===6){m.textContent='برافو! فشّيتي كل غلك 😌 اتفضلي شوكولاتة 🍫🍫🍫';confetti(25,['🍫','💖','✨'])}else{m.textContent='فرقعتي '+p+' من 6 💥'}}))}}
+ else if(k==='tired'){var on=false;
+  a.appendChild(mkb('وضع النوم 🌙',function(){on=!on;document.body.style.filter=on?'brightness(.7)':'';m.textContent=on?'تصبحي على خير يا قمر 🌙💤 أنا هنا':'صحيتي؟ صباح الفل 🌸';if(on)confetti(14,['💤','🌙','⭐'])}))}
+ else if(k==='hungry'){var F=[['بيتزا','🍕'],['شوكولاتة','🍫'],['برجر','🍔'],['آيس كريم','🍦'],['كشري','🍝']];
+  F.forEach(function(f){a.appendChild(mkb(f[1]+' '+f[0],function(){kissText.hungry='أنا جعانة وعايزة '+f[0]+' '+f[1]+' 😋';setKiss();m.textContent='تمام! '+f[0]+' '+f[1]+' في الطريق 🛵 دوسي على البوسة تحت وأنا هعرف';confetti(20,[f[1],'💖'])}))})}
+ else if(k==='random'){var O=['يوم دلع 👑 مفيش حد يقولك لأ','يوم رقص 💃 شغلي أغنيتك وارقصي','يوم نوم وأفلام 🎬🍿','يوم أكل وشوكولاتة 🍫🍕','يوم حضن طويل 🫂💞'];
+  a.appendChild(mkb('لفّي العجلة 🎡',function(){var n=0,iv=setInterval(function(){m.textContent=['🎡','✨','💫','🌈'][n%4]+' '+O[n%O.length];n++;if(n>14){clearInterval(iv);m.textContent='النتيجة: '+pick(O);confetti(25)}},120)}))}
+}
+document.querySelectorAll('[data-m]').forEach(function(b){b.addEventListener('click',function(){
+ var k=b.dataset.m;$('msg').textContent=pick(M[k]);
+ if(!window.matchMedia('(prefers-color-scheme: dark)').matches){document.body.style.background='linear-gradient(160deg,'+themes[k][0]+','+themes[k][1]+')'}
+ hearts(12);kissMood=k;setKiss();act(k)})});
+
+/* ---------- الجواب ---------- */
+$('letterBtn').onclick=function(){
+ var l=$('letter'),open=l.classList.toggle('hide')===false;
+ $('letterBtn').textContent=open?'اقفلي الجواب 💌':'افتحي الجواب 💌';
+ if(open){hearts(25);l.scrollIntoView({behavior:'smooth',block:'center'})}
+};
+
+/* ---------- رسائل حب ---------- */
+var LOVE=[
+ 'بحبك أكتر من إمبارح وأقل من بكرة 💞',
+ 'لما بسمع اسمك قلبي بيبتسم لوحده 🥹',
+ 'انتي أحلى مكان بحس فيه إني في بيتي 🏡💗',
+ 'مهما كان يومي صعب، بكلمك فبيبقى أحلى 💕',
+ 'عيونك دي وطن، وأنا عايش فيه 🌍💖',
+ 'لو الدنيا كلها اتغيرت، حبي ليكي مش هيتغير 💍',
+ 'كل حاجة حلوة في حياتي ليها وش ضحكتك 😊',
+ 'أنا مش بحبك لأنك كاملة، أنا بحبك لأنك انتي 🌸',
+ 'أتمنى أكون السبب في كل ضحكة بتطلع منك 🥰',
+ 'انتي أجمل صدفة في حياتي ✨',
+ 'لو أنا شمس، انتي النور اللي مخليني أنوّر ☀️💗',
+ 'وجودك جنبي بيخليني أحب نفسي أكتر 🫶',
+ 'مفيش حضن في الدنيا زي حضنك، ولا ريحة زي ريحتك 🫂',
+ 'كل ما أقول إني مش هقدر أحبك أكتر، أكتشف إني قدرت 💘',
+ 'عايز أكبر معاكي وأعجّز معاكي وأفضل أحبك 👵👴💞',
+ 'اسمك أحلى كلمة نطقها لساني: نهوده 💖',
+ 'بخاف من حاجة واحدة بس: إني أضيّع ضحكتك 🥺',
+ 'إنتي مش جزء من حياتي، إنتي حياتي نفسها 💗',
+ 'نامي وأنا هحرس أحلامك وأخليها كلها حلوة 🌙',
+ 'يلا نكمل الحكاية، أنا مش هسيب إيدك أبدًا 🤝💞'
+];
+var li=-1;
+$('loveBtn').onclick=function(){var n;do{n=Math.floor(Math.random()*LOVE.length)}while(n===li);li=n;$('love').textContent=LOVE[n];hearts(14)};
+
+/* ---------- أسباب ---------- */
+var R=[
+ 'ضحكتك اللي بتنوّر المكان 😊','طيبة قلبك مع كل الناس 🤍','دلعك اللي بيجنني 🥰','إنك بتقوي رغم التعب 💪','طريقتك لما بتتكسفي 🙈','عنادك الحلو 😤💗','إنك مخلّياني أحسن 🌱','صوتك لما بتصحي من النوم 😴','اهتمامك بأتفه تفاصيلي 🔍💕','حنيتك حتى وانتي زعلانة 🫶','إنك بتفهميني من غير ما أتكلم 👀','إنك نهوده بتاعتي ❤️'
+];
+var ri=0;
+$('reasonBtn').onclick=function(){$('reason').textContent=(ri+1)+'. '+R[ri%R.length];ri++;hearts(10);if(ri>=R.length)$('reasonBtn').textContent='بحبك عشان كل ده وأكتر 💞'};
+
+/* ---------- دلع الأيام الصعبة ---------- */
+var CARE=[
+ ['ينسون سخن 🍵','كوباية ينسون سخنة في إيدك وبطانية على كتافك، وأنا بدعيلك 🤲'],
+ ['مخدة سخنة 🔥','حاطها على بطنك وحاسس بيكي، ارتاحي يا قلبي 🫂'],
+ ['شوكولاتة 🍫','شوكولاتة كتير وأنا مش هحاسبك على ولا حتة 😋'],
+ ['فيلم وبطانية 🎬','فيلم الأول بتختاريه، ولو نمتي في نصه هكمله معاكي من الأول 🍿'],
+ ['حضن طويل 🫂','حضن رقم مليون ولسه هديك تاني 💞'],
+ ['مساج للكتاف 💆‍♀️','لو كنت جنبك كنت دلكتلك كتافك لحد ما تنامي 🫶'],
+ ['سكوت وراحة 🤫','هسكت خالص النهاردة وأقعد جنبك وبس 🌙'],
+ ['إجازة من كل حاجة 🏖️','مفيش حاجة مطلوبة منك النهاردة غير إنك تتدلعي 👑']
+];
+CARE.forEach(function(c){var b=document.createElement('button');b.textContent=c[0];b.onclick=function(){b.classList.add('done');$('careMsg').textContent=c[1];hearts(12)};$('care').appendChild(b)});
+
+/* ---------- الشبكة ---------- */
+var SH=[
+ 'الشبكة الرسمية: رغيف عيش بلدي سخن، عيار ٢٤ قيراط 🥖😂',
+ 'الدبلة: دايرة الرغيف نفسها، بتتاكل كمان 💍🥖',
+ 'السلسلة: فينو متعلّق في رقبتك، موضة جديدة 😎🥖',
+ 'الإسورة: عيش شمسي ملفوف حوالين إيدك 🤣',
+ 'مؤخر الصداق: عيش وملح وطعمية، ما تتنازليش عنهم 🧂',
+ 'الضمان: الرغيف مش هيبوظ طول ما انتي معايا 😂',
+ 'ضحكتي دي هي أحلى حاجة في الموضوع كله 🥹',
+ 'هزار في هزار 😂 بس الشبكة الحقيقية قلبي، وعيش وملح معاكي مدى الحياة 💍🥖💖'
+];
+var si=0;
+$('shabkaBtn').onclick=function(){
+ $('shabka').textContent=SH[si%SH.length];hearts(10);
+ if(si%SH.length===SH.length-1){confetti(40,['🥖','💍','💖','✨']);$('shabkaBtn').textContent='ابدئي من الأول 🔁'}
+ else{$('shabkaBtn').textContent='وكمان؟ 😂'}
+ si++;
+};
+
+/* ---------- مفاجأة ---------- */
+var S=["بحبك أكتر من إمبارح وأقل من بكرة 💞","انتي أحلى مفاجأة في حياتي 🎁","عيد ميلادك الجاي هنعمله احتفال ملوش مثيل 🎂🎉","ابتسمي، عشان الدنيا تحلو 🌸","في بوسة في الطريق ليكي 💋✈️","النهاردة تستاهلي أحلى حاجة في الدنيا، وأنا هعملها 🌹"];
+$('surprise').onclick=function(){$('sur').textContent=pick(S);hearts(30)};
+$('kiss').addEventListener('click',function(){hearts(30)});
+setKiss();
+
+/* ---------- العد التنازلي ---------- */
+function tick(){
+ var n=new Date(),y=n.getFullYear(),b=new Date(y,5,1);
+ if(n>=new Date(y,5,2)){b=new Date(y+1,5,1)}
+ var today=(n.getMonth()===5&&n.getDate()===1);
+ var el=$('count');
+ if(today){el.innerHTML='<div><b>🎉</b><small>كل سنة وانتي طيبة!</small></div>';}
+ else{var d=b-n,D=Math.floor(d/864e5),H=Math.floor(d/36e5)%24,Mi=Math.floor(d/6e4)%60;
+  el.innerHTML='<div><b>'+D+'</b><small>يوم</small></div><div><b>'+H+'</b><small>ساعة</small></div><div><b>'+Mi+'</b><small>دقيقة</small></div>'}
+ var age=b.getFullYear()-2008;
+ $('age').textContent=today?'النهاردة بقى عندك '+age+' سنة يا عروسة 👑':'وهتبقي '+age+' سنة، وهتفضلي أحلى واحدة 👑';
+}
+tick();setInterval(tick,30000);
+setInterval(function(){hearts(1)},1500);
+</script>
+</body>
+</html>
